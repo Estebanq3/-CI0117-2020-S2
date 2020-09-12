@@ -1,0 +1,25 @@
+Para la pregunta de lo predecible considero el mismo razonamiento usado en el README del ejercicio anterior.
+Mutex:
+Es una llave para un inodoro. Una persona puede tener la llave, ocupar el baño, en ese momento. Cuando termina, la persona entrega (libera) la clave a la siguiente persona en 
+la cola.
+Oficialmente: "Las exclusiones mutuas se utilizan normalmente para serializar el acceso a una sección del código de reingreso que no puede ser ejecutada simultáneamente por 
+más de un hilo. Un objeto de exclusión mutua solo permite un hilo en una sección controlada, lo que obliga a otros hilos que intentan acceder esa sección esperará hasta que 
+el primer hilo haya salido de esa sección ". Ref: Symbian Developer Library
+(Un mutex es realmente un semáforo con valor 1).
+
+Semáforo:
+Es el número de llaves de baño idénticas gratis. Ejemplo, digamos que tenemos cuatro baños con cerraduras y llaves idénticas. El recuento de semáforos, el recuento de claves, 
+se establece en 4 al principio (los cuatro inodoros son gratuitos), luego el valor del recuento disminuye a medida que entran personas. Si todos los inodoros están llenos, es 
+decir. no quedan claves libres, el recuento de semáforos es 0. Ahora, cuando eq. una persona sale del inodoro, el semáforo se incrementa a 1 (una llave gratis) y se entrega a la 
+siguiente persona en la cola.
+Oficialmente: "Un semáforo restringe el número de usuarios simultáneos de un recurso compartido hasta un número máximo. Los subprocesos pueden solicitar acceso al recurso 
+(disminuyendo el semáforo) y pueden indicar que han terminado de usar el recurso (aumentar el semáforo). " Ref: Symbian Developer Library
+
+Mutex solo puede liberarse por el hilo que lo adquirió, mientras que usted puede señalar el semáforo desde cualquier otro hilo (o proceso), por lo que los semáforos son más 
+adecuados para algunos problemas de sincronización como el productor-consumidor. (Ejemplo de clase)
+Un semáforo puede ser un Mutex, pero un Mutex nunca puede ser un semáforo. Esto simplemente significa que un semáforo binario se puede usar como Mutex, pero un Mutex nunca puede mostrar
+la funcionalidad del semáforo.
+La naturaleza de los semáforos hace que sea posible utilizarlos en la sincronización de procesos relacionados y no relacionados, así como entre subprocesos. Mutex solo se puede utilizar 
+para sincronizar subprocesos y, a lo sumo, entre procesos relacionados
+De acuerdo con la documentación del núcleo, los Mutex son más ligeros en comparación con los semáforos. Lo que esto significa es que un programa con uso de semáforos tiene una mayor huella 
+de memoria en comparación con un programa que tiene Mutex.
