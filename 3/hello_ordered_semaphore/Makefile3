@@ -1,0 +1,2 @@
+compile: Ejercicio3.c
+	gcc Ejercicio3.c -o Ejercicio3 -pthread

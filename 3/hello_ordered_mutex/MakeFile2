@@ -1,0 +1,2 @@
+compile: Ejercicio2.c
+	gcc Ejercicio2.c -o Ejercicio2 -pthread
