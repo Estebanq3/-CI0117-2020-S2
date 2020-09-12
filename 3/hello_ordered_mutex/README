@@ -1,0 +1,6 @@
+Permite este mecanismo de control de concurrencia resolver este problema de manera predecible?
+Nosotros nos podemos a anticipar al hecho de que existan hilos que se ejecuten más rápido que los otros por lo tanto podemos predecir el problema
+de que los hilos saluden en desorden debido a la aleatoriedad del tiempo en el cual estos realizan sus funciones.
+Manipulando los mutex podemos generar una salida en orden debido a que realizamos un lock a todos aquellos hilos, los cuales no sean el primero, y posteriormente
+vamos a ir desbloqueando cada hilo según el orden correspondiente para que estos lleguen a quedar en orden ascendente, y no puedan realizar sus operaciones mientras
+no sea el turno de ellos.
