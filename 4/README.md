@@ -33,47 +33,8 @@ Starvation es el problema que ocurre cuando los procesos de alta prioridad sigue
 
 
 Pseudocódigo de los Heathens, para los Prudes se debe seguir el mismo lineamiento.
-1    heathenTurn . wait ()
-2   heathenTurn . signal ()
-3
-4   mutex . wait ()
-5   heathens ++
-6
-7   if status == ’ neutral ’:
-8         status = ’ heathens rule ’
-9         mutex . signal ()
-10 elif status == ’ prudes rule ’:
-11        if heathens > prudes :
-12              status = ’ transition to heathens ’
-13              prudeTurn . wait ()
-14       mutex . signal ()
-15       heathenQueue . wait ()
-16 elif status == ’ transition to heathens ’:
-17       mutex . signal ()
-18       heathenQueue . wait ()
-19 else
-20     mutex . signal ()
-21
-22 # cross the field
-23
-24  mutex . wait ()
-25  heathens --
-26
-27  if heathens == 0:
-28      if status == ’ transition to prudes ’:
-29            prudeTurn . signal ()
-30      if prudes :
-31             prudeQueue . signal ( prudes )
-32            status = ’ prudes rule ’
-33      else :
-34           status = ’ neutral ’
-35
-36  if status == ’ heathens rule ’:
-37         if prudes > heathens :
-38               status = ’ transition to prudes ’
-39               heathenTurn . wait ()
-40
-41  mutex . signal ()
+![image](https://github.com/Estebanq3/-CI0117-2020-S2/blob/master/4/Pseudo.png)
+
 
 A medida que cada hilo se registra se deben considerar los siguientes casos:
 1.Si el campo está vacío, el hilo que llega de determinado bando reclama la sección crítica como territorio de su bando.
