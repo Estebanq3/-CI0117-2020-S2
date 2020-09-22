@@ -33,6 +33,7 @@ Starvation es el problema que ocurre cuando los procesos de alta prioridad sigue
 
 
 Pseudocódigo de los Heathens, para los Prudes se debe seguir el mismo lineamiento.
+![](4/filenamePseudo.png)
 1    heathenTurn . wait ()
 2   heathenTurn . signal ()
 3
