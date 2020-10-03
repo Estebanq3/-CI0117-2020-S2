@@ -7,4 +7,4 @@ Esteban Quesada Quesada B96157
 
 Pruebas:
 
-![image]()
+![image](https://github.com/Estebanq3/-CI0117-2020-S2/blob/master/Laboratorio5/Pruebas_Lab_V.png)
