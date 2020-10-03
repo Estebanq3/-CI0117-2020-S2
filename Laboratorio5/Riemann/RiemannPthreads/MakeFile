@@ -1,0 +1,2 @@
+compile: RiemannT.c
+	gcc -pthread -o RiemannT RiemannT.c 
