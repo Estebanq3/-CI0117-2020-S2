@@ -52,9 +52,14 @@ Al final se muestra un dato que se denomina "TiempoTotal" el cual señala la dur
 Casos de Prueba:
 Ventana 0:
 
+![image](https://github.com/Estebanq3/-CI0117-2020-S2/blob/master/Proyectos/pthreadmon/CasodePruebaW0.png)
+
 Ventana 1:
+
 ![image](https://github.com/Estebanq3/-CI0117-2020-S2/blob/master/Proyectos/pthreadmon/CasoDePruebaW1.png)
+
 Ventana 2:
+
 ![image](https://github.com/Estebanq3/-CI0117-2020-S2/blob/master/Proyectos/pthreadmon/CasoDePruebaW2.png)
 
 Estructura del Programa:
