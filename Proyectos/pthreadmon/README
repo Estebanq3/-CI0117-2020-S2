@@ -49,6 +49,14 @@ significa la energía que debe alcanzar un pokemon para realizar un ataque carga
 En la última ventana denominada Resultados, la información que se presenta es el jugador que resultó ganador con su determinado equipo de pokemones, así como al perdedor con su equipo. Se indica el nombre de cada pokemon del jugador, así como la vida final con la que terminó en la batalla cada pokemon, y el tiempo que duró en batalla cada uno de estos.
 Al final se muestra un dato que se denomina "TiempoTotal" el cual señala la duración total de la batalla.
 
+Casos de Prueba:
+Ventana 0:
+![image](https://github.com/Estebanq3/-CI0117-2020-S2/blob/master/Proyectos/pthreadmon/CasodePruebaW0.png)
+Ventana 1:
+![image](https://github.com/Estebanq3/-CI0117-2020-S2/blob/master/Proyectos/pthreadmon/CasoDePruebaW1.png)
+Ventana 2:
+![image](https://github.com/Estebanq3/-CI0117-2020-S2/blob/master/Proyectos/pthreadmon/CasoDePruebaW2.png)
+
 Estructura del Programa:
 Se utiliza el Modelo Vista Controlador (MVC), el cual es un estilo de arquitectura de software que separa los datos de una aplicación, la interfaz de usuario, y la lógica de control en tres componentes distintos.
 
