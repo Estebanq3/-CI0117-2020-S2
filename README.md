@@ -25,9 +25,13 @@ mismo durante el tiempo que se mantenga vivo. Asimismo, al inicio del programa s
 proceso, por lo tanto, una vez se haya solicitado el Mario que se desea espectar, se solicitará la estrategia que se desea establecer para el Mario seleccionado para observarlo.
 Se brindan cuatro estrategias que el usuario puede establecer para el Mario:
 1. RANDOM: Se establece digitando el número 1, en dicha estrategia se escoge un Mario aleatorio para atacarlo.
+
 2.LESS_COINS: Se establece digitando el número 2. Mario ataca al enemigo con menos monedas.
+
 3.MORE_COINS: Se establece digitando el número 3. Mario ataca al enemigo con mayor número de monedas.
+
 4.ATTACKER: Se establece digitando el número 4. Mario ataca al último enemigo que lo atacó a él.
+
 Asimismo, durante la ejecución de la simulación, si un Mario que se está espectando muere, se le solicita al usuario digitar otro Mario para observar, este debe ser un Mario que 
 se encuentre vivo. Los Marios vivos se indican antes de preguntar a cual nuevo jugador se desea observar.
 
@@ -64,15 +68,20 @@ acceso. Es de gran utilidad que todos los procesos recolecten estos datos y los 
 tenga más monedas o el que tenga menos, por eso es importante realizar esta recolecciín para que cada procesos conozca bien los datos, y pueda realizar acciones entorno a la
 información que se comparte entre todos. Asimismo ocurre cuando se envían enemigos a otros procesos, es necesario el uso de esta función para poder enviar al proceso víctima
 los little goombas que se establecerán 10 posiciones en el mapa adelante de la posición actual del Mario víctima.
+
 2.Posteriormente también se utiliza la función send y receive, estas son utilizadas para enviarle desde el proceso raíz 0, al proceso que se va a expectar, la estrategia que 
 este deberá adaptar, recordemos que solo el hilo 0 puede leer, por lo tanto una vez que lee la estrategia decidida por el usuario, se le enviará al Mario respectivo que se desea
 expectar para que este realice un set con la información obtenida para cambiar su comportamiento durante la simulación.
+
 3. Se utiliza asimismo la función Allreduce, esto con el fin de obtener la máxima cantida de Marios vivos que se encuentran durante un determinado momento de la simulación, se 
 pensó en utilizar esta función debido a que para todos los procesos, all_reduce funciona como un send de los datos de un buffer a los demás procesos. Asimismo, se realiza una 
 operación de reducción sobre los datos recibidos. Donde finalmente todos los procesos tienen el resultado de la operación(suma), es decir, la cantidad de Marios vivos durante un 
 momento de la partida. Una vez que este número sea igual a uno se detendrá la simulación, puesto que un Mario habrá ganado la partida al ser el último en quedar en pie.
+
 4. Asimismo, utilizamos un reduce(MPI_Reduce funciona como un send de los datos de un buffer al proceso raíz) para enviar determinados datos específicos sobre el comportamiento 
 de la partida al hilo 0, es decir el proceso raíz, para que este pueda decidir que acciones tomar con base en lo que está recibiendo de parte de otros procesos.
+
 5.Por último también, se utiliza un broadcast para avisar al resto de procesos de la partida quien va a ser el proceso observado durante la simulación, cada vez que se elija a 
 quién se va a observar. Recordando el broadcast lo que realizaba era solictiar al proceso raíz enviar la misma información a todos los demás procesos. Donde la dirección de envío
 es la misma que la dirección donde los procesos que reciben guardan la información que se les es enviada.
+
