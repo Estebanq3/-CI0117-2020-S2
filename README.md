@@ -24,7 +24,7 @@ la cantidad de Marios que queremos que jueguen a la vez, configurando el número
 mismo durante el tiempo que se mantenga vivo. Asimismo, al inicio del programa se dará una única oportunidad de seleccionar la estrategia del Mario, debido a que es el primer 
 proceso, por lo tanto, una vez se haya solicitado el Mario que se desea espectar, se solicitará la estrategia que se desea establecer para el Mario seleccionado para observarlo.
 Se brindan cuatro estrategias que el usuario puede establecer para el Mario:
-1. RANDOM: Se establece digitando el número 1, en dicha estrategia se escoge un Mario aleatorio para atacarlo.
+1.RANDOM: Se establece digitando el número 1, en dicha estrategia se escoge un Mario aleatorio para atacarlo.
 
 2.LESS_COINS: Se establece digitando el número 2. Mario ataca al enemigo con menos monedas.
 
@@ -60,6 +60,7 @@ elemento en el entorno. Esta clase contiene métodos como inicializar para crear
 get para obtener la siguiente posición en el mapa o obtener más bien la posición en la que se está actualmente.
 
 **Funciones del estándar MPI utilizadas**
+
 1.En primer lugar existe una gran cantidad de Allgathers, los cuales como ya sabemos para todos los procesos, hace un send de los datos de un buffer a todos los demás procesos. 
 Asimismo, funciona como un receive de todos datos. Todos los procesos tendrán el arreglo con los valores recolectados. Esta función de MPI se utiliza principalmente para que 
 todos los procesos conozcan la cantidad de monedas de cada Mario, así como los Marios vivos que se encuentran en la simulación, los atacantes de cada Mario, así como sus 
