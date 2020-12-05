@@ -64,7 +64,11 @@ get para obtener la siguiente posición en el mapa o obtener más bien la posici
 *A la hora que se solicita un nuevo proceso para espectarlo, después de que el proceso que se estaba observando haya muerto, puede suceder un pequeño detalle. Cuando
 se solicita el nuevo proceso a espectar, siempre se imprime una lista con los Marios vivos, sin embargo, esta lista puede arrojar datos no completamente actualizados
 ,puesto que mientras se imprima algun proceso de los que se van a imprimir, alguno pueda haber muerto, por lo tanto, si el programa dura un rato en responder, es porque en 
-realidad, no se están imprimiendo las acciones del proceso muerto. Otra aclaración importante es que a pesar de que en ciertos momentos de la impresión Mario indique que está siendo atacado por otro Mario, no necesariamente va a recibir goombas o koopatropas, puesto que solo se está indicando que un Mario lo escogió temporalmente para atacarlo, en caso de matar un goomba o un koopa tropa, pero de no matar a ninguno de estos no se realizará el ataque.*
+realidad, no se están imprimiendo las acciones del proceso muerto. Otra aclaración importante es que a pesar de que en ciertos momentos de la impresión Mario indique que está 
+siendo atacado por otro Mario, no necesariamente va a recibir goombas o koopatropas, puesto que solo se está indicando que un Mario lo escogió temporalmente para atacarlo, en 
+caso de matar un goomba o un koopa tropa, pero de no matar a ninguno de estos no se realizará el ataque. Otro aspecto importante de aclarar, es que existen momentos donde la
+simulación tarda un rato en continuar, esto quizás esperando a que todos los procesos reciban mensajes, por lo tanto si se vuelve lento o parece que se ha quedado pegado,
+en realidad se le debe dar cierto tiempo para que continue, pero va a finalizar de todas formas.*
 
 **Funciones del estándar MPI utilizadas**
 
