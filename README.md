@@ -59,6 +59,11 @@ se necesite colocar una moneda, o un enemigo en determinada posición del mapa, 
 elemento en el entorno. Esta clase contiene métodos como inicializar para crear un mundo de Mario con elementos definidos en cada casilla, así como también cuenta con métodos 
 get para obtener la siguiente posición en el mapa o obtener más bien la posición en la que se está actualmente.
 
+**Aclaraciones**
+*A la hora que se solicita un nuevo proceso para espectarlo, después de que el proceso que se estaba observando haya muerto, puede suceder un pequeño detalle. Cuando
+se solicita el nuevo proceso a espectar, siempre se imprime una lista con los Marios vivos, sin embargo, esta lista puede arrojar datos no completamente actualizados
+,puesto que mientras se imprima algun proceso de los que se van a imprimir, alguno pueda haber muerto, por lo tanto, si el programa dura un rato en responder, es porque en realidad, no se están imprimiendo las acciones del proceso muerto.*
+
 **Funciones del estándar MPI utilizadas**
 
 1.En primer lugar existe una gran cantidad de Allgathers, los cuales como ya sabemos para todos los procesos, hace un send de los datos de un buffer a todos los demás procesos. 
