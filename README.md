@@ -35,8 +35,9 @@ Se brindan cuatro estrategias que el usuario puede establecer para el Mario:
 Asimismo, durante la ejecución de la simulación, si un Mario que se está espectando muere, se le solicita al usuario digitar otro Mario para observar, este debe ser un Mario que 
 se encuentre vivo. Los Marios vivos se indican antes de preguntar a cual nuevo jugador se desea observar.
 
-**Detalles de la solución: Estructura del programa (clases, folders, archivos, etc.) y breve descripción de cada uno de los componentes. Puede agregar un diagrama de componentes 
-para representar la interacción entre los elementos.**
+**Detalles de la solución: Estructura del programa (clases, folders, archivos, etc.) y breve descripción de cada uno de los componentes**
+El programa está ordenado en dos carpetas, una llamada modelo y otra controlador. En la carpeta modelo se encuentran todos los .h, tales como world.h, mario.h, actions.h
+mientras que en la carpeta denominada controlador se contemplan los archivos .cpp: world.cpp mario.cpp gameMaster.cpp.
 Componentes Principales de la Implementación:
 GameMaster: El gameMaster es el encargado de dirigir la simulación de cada proceso o Mario que se crea en el juego, esta clase coordina todas las acciones y eventos de los 
 Marios. Se encarga de crear e inicilizar con métodos de otras clases al Mario y al mundo de cada proceso. Asimismo controla las acciones que realizan los Marios de acuerdo a 
